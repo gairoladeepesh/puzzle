@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WAGAWIN" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RFW-8c-dXY">
+                                <rect key="frame" x="41" y="28" width="559" height="327"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="REz-kI-xHF">
+                                    <size key="itemSize" width="105" height="103"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellIdentifier" id="rQp-ot-EN0" customClass="puzzleCollectionViewCell" customModule="WAGAWIN" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="105" height="103"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="105" height="103"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zk2-gE-DZm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="105" height="103"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="zk2-gE-DZm" firstAttribute="top" secondItem="rQp-ot-EN0" secondAttribute="top" id="0Kq-xR-vYI"/>
+                                            <constraint firstItem="zk2-gE-DZm" firstAttribute="leading" secondItem="rQp-ot-EN0" secondAttribute="leading" id="7lg-OX-ryV"/>
+                                            <constraint firstAttribute="bottom" secondItem="zk2-gE-DZm" secondAttribute="bottom" id="8Td-A0-7xD"/>
+                                            <constraint firstAttribute="trailing" secondItem="zk2-gE-DZm" secondAttribute="trailing" id="t9r-1c-SKm"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="puzzleImg" destination="zk2-gE-DZm" id="M09-QT-l8y"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ECI-NP-g5h"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="y5q-Dv-3HT"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cny-Kg-G38">
+                                <rect key="frame" x="615" y="30" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="FoL-TN-dyX"/>
+                                    <constraint firstAttribute="height" constant="30" id="jU6-yS-UrJ"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="cancel_button.png"/>
+                                <connections>
+                                    <action selector="actionStopPuzzle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rpx-R3-Fts"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="RFW-8c-dXY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="28" id="JN5-B1-Fd1"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RFW-8c-dXY" secondAttribute="bottom" constant="20" id="R6a-t1-ZNL"/>
+                            <constraint firstItem="RFW-8c-dXY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="41" id="dva-cT-q2I"/>
+                            <constraint firstItem="cny-Kg-G38" firstAttribute="leading" secondItem="RFW-8c-dXY" secondAttribute="trailing" constant="15" id="lKz-9I-4QP"/>
+                            <constraint firstItem="cny-Kg-G38" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="opl-HR-o5i"/>
+                            <constraint firstAttribute="trailing" secondItem="RFW-8c-dXY" secondAttribute="trailing" constant="67" id="rd4-1h-WHS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnClose" destination="cny-Kg-G38" id="q2W-Sh-OLW"/>
+                        <outlet property="viewPuzzle" destination="RFW-8c-dXY" id="hTT-Nz-1EU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="104.7976011994003" y="141.59999999999999"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cancel_button.png" width="44" height="44"/>
+    </resources>
+</document>
